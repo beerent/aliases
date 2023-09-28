@@ -1,12 +1,13 @@
-addAlias() {
+add_alias() {
   local alias_name="$1"
   local alias_value="$2"
   local alias_file="$ALIASES_HOME/aliases"
 
   echo "alias $alias_name='$alias_value'" >> "$alias_file"
+  echo "added alias $alias_name -> [$alias_value]"
 }
 
-removeAlias() {
+remove_alias() {
   local alias_name="$1"
   local alias_file="$ALIASES_HOME/aliases"
 
@@ -22,6 +23,20 @@ removeAlias() {
     source "$alias_file"
     
     echo "Alias '$alias_name' removed."
+  else
+    echo "Alias file '$alias_file' not found."
+  fi
+}
+
+list_aliases() {
+  local alias_file="$ALIASES_HOME/aliases"
+
+  # Check if the alias file exists
+  if [ -f "$alias_file" ]; then
+    echo "List of Aliases:"
+    echo "----------------"
+    # Use grep to extract and display alias lines from the file
+    grep "^alias " "$alias_file" | sed -E "s/^alias ([^=]+)='(.*)'$/\1='\2'/"
   else
     echo "Alias file '$alias_file' not found."
   fi
