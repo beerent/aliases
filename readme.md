@@ -5,7 +5,7 @@ setup:
   /Users/bartsimpson/repos
 
 2. add the three lines of code to your .zshrc or .bashrc file:
-export ALIASES_HOME="/Users/bartsimpson/repos"
+export ALIASES_HOME="/Users/bartsimpson/repos/aliases"
 source $ALIASES_HOME/aliases
 source $ALIASES_HOME/alias_functions.sh
 
