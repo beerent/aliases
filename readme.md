@@ -11,7 +11,7 @@ example:
   source ~/.aliases
   source $ALIASES_HOME/alias_functions.sh
 
-3. re-source your .zshrc or .bashrc
+4. re-source your .zshrc or .bashrc
 
 You're all setup!
 
