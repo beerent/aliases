@@ -1,7 +1,7 @@
 add_alias() {
   local alias_name="$1"
   local alias_value="$2"
-  local alias_file="$ALIASES_HOME/aliases"
+  local alias_file="$HOME/.aliases"
 
   echo "alias $alias_name='$alias_value'" >> "$alias_file"
   echo "added alias $alias_name -> [$alias_value]"
@@ -12,7 +12,7 @@ add_alias() {
 
 remove_alias() {
   local alias_name="$1"
-  local alias_file="$ALIASES_HOME/aliases"
+  local alias_file="$HOME/.aliases"
 
   # Check if the alias file exists
   if [ -f "$alias_file" ]; then
@@ -32,7 +32,7 @@ remove_alias() {
 }
 
 list_aliases() {
-  local alias_file="$ALIASES_HOME/aliases"
+  local alias_file="$HOME/.aliases"
 
   # Check if the alias file exists
   if [ -f "$alias_file" ]; then
