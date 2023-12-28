@@ -5,7 +5,7 @@ setup:
 example:
   /Users/bartsimpson/repos
 
-2. source this new repo via .zshrc or .bashrc
+2. source this new repo, as well as the aliases file via .zshrc or .bashrc
 example:
   export ALIASES_HOME="/Users/bartsimpson/repos/aliases"
   source ~/.aliases
