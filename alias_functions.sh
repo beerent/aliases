@@ -6,6 +6,7 @@ add_alias() {
   echo "alias $alias_name='$alias_value'" >> "$alias_file"
   echo "added alias $alias_name -> [$alias_value]"
 
+  # Source the modified alias file to apply changes to the current session
   source "$alias_file"
 }
 
