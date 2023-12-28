@@ -5,6 +5,8 @@ add_alias() {
 
   echo "alias $alias_name='$alias_value'" >> "$alias_file"
   echo "added alias $alias_name -> [$alias_value]"
+
+  source "$alias_file"
 }
 
 remove_alias() {

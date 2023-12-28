@@ -1,2 +1,6 @@
 alias code='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code'
-alias hw='echo 'hello world''
+alias td='nvim ~/.todo'
+alias cc='nvim /config/cloudroute_config.properties'
+alias aa='add_alias'
+alias ra='remove_alias'
+alias la='list_aliases'
