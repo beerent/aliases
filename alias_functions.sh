@@ -3,7 +3,9 @@ add_alias() {
   local alias_value="$2"
   local alias_file="$HOME/.aliases"
 
-  echo "alias $alias_name='$alias_value'" >> "$alias_file"
+  local alias_value_escaped="$(echo "$alias_value" | sed "s/'/'\\\\''/g")"
+
+  echo "alias $alias_name='$alias_value_escaped'" >> "$alias_file"
   echo "added alias $alias_name -> [$alias_value]"
 
   # Source the modified alias file to apply changes to the current session
