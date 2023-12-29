@@ -7,9 +7,9 @@ example:
 
 2. source this new repo, as well as the aliases file via .zshrc or .bashrc
 example:
-  export ALIASES_HOME="/Users/bartsimpson/repos/aliases"
-  source ~/.aliases
-  source $ALIASES_HOME/alias_functions.sh
+export ALIASES_HOME="/Users/bartsimpson/repos/aliases"
+source ~/.aliases
+source $ALIASES_HOME/alias_functions.sh
 
 4. re-source your .zshrc or .bashrc
 
