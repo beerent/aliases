@@ -14,7 +14,12 @@ add_alias() {
 
 save_alias() {
   local alias_name="$1"
-  local alias_value=$(history -1 | awk '{$1=""; print substr($0,2)}')
+  # if is zsh
+  if [ "$SHELL" = "/bin/zsh" ]; then
+    local alias_value=$(history -1 | awk '{$1=""; print substr($0,2)}')
+  else
+    local alias_value=$(history 2 | head -n1 | awk '{$1=""; print substr($0,2)}')
+  fi
   local alias_file="$HOME/.aliases"
 
   local alias_value_escaped="$(echo "$alias_value" | sed "s/'/'\\\\''/g")"
