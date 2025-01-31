@@ -11,6 +11,7 @@ example:
 export ALIASES_HOME="/Users/bartsimpson/repos/aliases"
 source ~/.aliases
 source $ALIASES_HOME/alias_functions.sh
+source $ALIASES_HOME/alias_detector.zsh
 ```
 
 4. re-source your .zshrc or .bashrc
