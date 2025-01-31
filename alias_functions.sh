@@ -12,6 +12,20 @@ add_alias() {
   source "$alias_file"
 }
 
+save_alias() {
+  local alias_name="$1"
+  local alias_value=$(history -1 | awk '{$1=""; print substr($0,2)}')
+  local alias_file="$HOME/.aliases"
+
+  local alias_value_escaped="$(echo "$alias_value" | sed "s/'/'\\\\''/g")"
+
+  echo "alias $alias_name='$alias_value_escaped'" >> "$alias_file"
+  echo "added alias $alias_name -> [$alias_value]"
+
+  # Source the modified alias file to apply changes to the current session
+  source "$alias_file"
+}
+
 remove_alias() {
   local alias_name="$1"
   local alias_file="$HOME/.aliases"
