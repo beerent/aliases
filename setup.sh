@@ -8,17 +8,14 @@ if [ "$SHELL" = "/bin/zsh" ]; then
   if [ -z "$ALIASES_HOME" ]; then
     echo "" >> ~/.zshrc
     echo "export ALIASES_HOME=\"$PWD\"" >> ~/.zshrc
-    echo "source ~/.aliases" >> ~/.zshrc
-    echo "source $PWD/alias_functions.sh" >> ~/.zshrc
-    echo "source $PWD/alias_detector.zsh" >> ~/.zshrc
+    echo "source $PWD/source.sh" >> ~/.zshrc
   fi
 
 elif [ "$SHELL" = "/bin/bash" ]; then
   if [ -z "$ALIASES_HOME" ]; then
     echo "" >> ~/.bashrc
     echo "export ALIASES_HOME=\"$PWD\"" >> ~/.bashrc
-    echo "source ~/.aliases" >> ~/.bashrc
-    echo "source $PWD/alias_functions.sh" >> ~/.bashrc
+    echo "source $PWD/source.sh" >> ~/.bashrc
 
     # not supported yet for bash
     #echo "source $ALIASES_HOME/alias_detector.sh" >> ~/.bashrc
