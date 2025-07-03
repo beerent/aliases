@@ -1,17 +1,17 @@
 This utility is a generic tool to dynamicly support the addition and removal of aliases on the fly.
 
 setup:
+
 1. clone the repo to some directory.
-example:
-  /Users/bartsimpson/repos
+   example:
+   /Users/bartsimpson/repos
 
 2. source this new repo, as well as the aliases file via .zshrc or .bashrc
-example:
+   example:
+
 ```
 export ALIASES_HOME="/Users/bartsimpson/repos/aliases"
-source ~/.aliases
-source $ALIASES_HOME/alias_functions.sh
-source $ALIASES_HOME/alias_detector.zsh
+source $ALIASES_HOME/source.sh
 ```
 
 4. re-source your .zshrc or .bashrc
@@ -19,10 +19,13 @@ source $ALIASES_HOME/alias_detector.zsh
 You're all setup!
 
 Usage:
-* add_alias (alias_name, alias_value)
+
+- add_alias (alias_name, alias_value)
+
   - example: add_alias hello "echo 'world'"
 
-* remove_alias (alias_name)
+- remove_alias (alias_name)
+
   - example: remove_alias hello
 
-* list_aliases
+- list_aliases
